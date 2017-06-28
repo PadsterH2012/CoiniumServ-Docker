@@ -16,7 +16,7 @@ RUN yum -y install git
 RUN git clone https://github.com/CoiniumServ/CoiniumServ.git 
 RUN cd /CoiniumServ 
 RUN git submodule init && git submodule update 
-RUN cd /build/release 
+RUN cd /CoiniumServ/bin/Release/ 
 RUN sh ./build.sh
 
 
