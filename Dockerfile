@@ -5,8 +5,8 @@ LABEL Vendor="CentOS" \
       Version=2.4.6-40
 
 
-RUN yum check-update && \
-    yum -y update \
+RUN yum update && \
+    yum -y upgrade \
     
 
 EXPOSE 8081
