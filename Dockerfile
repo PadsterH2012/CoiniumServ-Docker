@@ -21,4 +21,4 @@ RUN ls
 RUN pwd
 EXPOSE 8081
 
-CMD ["mono", "/CoiniumServ/bin/Release/CoiniumServ.exe"]
+#CMD ["mono", "/CoiniumServ/bin/Release/CoiniumServ.exe"]
