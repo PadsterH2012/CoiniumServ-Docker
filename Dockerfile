@@ -8,8 +8,8 @@ LABEL Vendor="CentOS" \
 RUN yum update 
 RUN yum -y upgrade
 RUN yum -y install git yum-utils \
-RUN rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
-RUN yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ \   
+&& rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
+&& yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ \   
 
 EXPOSE 8081
 
