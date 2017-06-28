@@ -5,7 +5,7 @@ LABEL Vendor="CentOS" \
       Version=2.4.6-40
 
 
-RUN yum update 
+RUN yum -y update 
 RUN yum -y upgrade
 RUN yum -y install git yum-utils \
 && rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
