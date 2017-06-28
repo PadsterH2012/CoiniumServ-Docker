@@ -5,20 +5,17 @@ LABEL Vendor="CentOS" \
       Version=2.4.6-40
 
 
-RUN yum -y update 
-RUN yum -y upgrade
-RUN yum -y install yum-utils \
+RUN yum -y update \
 && rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
 && yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ \   
 && yum check-update \
-RUN yum -y install mono-complete
-RUN yum -y install git 
+RUN yum -y install mono-complete git yum-utils
 RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
 && cd /CoiniumServ \
 && git submodule init \
 && git submodule update \
-&& cd /CoiniumServ/bin/Release \
-&& sh ./build.sh
+&& sh /CoiniumServ/bin/Release/build.sh
+
 
 
 EXPOSE 8081
