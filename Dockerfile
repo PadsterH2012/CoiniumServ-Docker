@@ -5,8 +5,7 @@ LABEL Vendor="CentOS" \
       Version=2.4.6-40
 
 
-RUN yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ && \
-    yum check-update && \
+RUN yum check-update && \
     yum -y update && \
     yum install -y mono-complete && \
     yum clean all
