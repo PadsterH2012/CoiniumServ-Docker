@@ -16,8 +16,9 @@ RUN git clone https://github.com/CoiniumServ/CoiniumServ.git
 RUN cd /CoiniumServ; git submodule init; git submodule update
 RUN ls
 RUN pwd
-RUN cd /bin/Release; sh ./build.sh
-
+RUN cd /CoiniumServ/bin/Release; sh ./build.sh
+RUN ls
+RUN pwd
 EXPOSE 8081
 
 CMD ["mono", "/CoiniumServ/bin/Release/CoiniumServ.exe"]
