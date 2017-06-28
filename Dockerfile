@@ -13,12 +13,12 @@ RUN yum -y install yum-utils \
 && yum check-update \
 RUN yum -y install mono-complete
 RUN yum -y install git 
-RUN git clone https://github.com/CoiniumServ/CoiniumServ.git 
-RUN cd /CoiniumServ 
-RUN git submodule init 
-RUN git submodule update 
-RUN cd /CoiniumServ/bin/Release/ 
-RUN sh ./build.sh
+RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
+&& cd /CoiniumServ \
+&& git submodule init \
+&& git submodule update \
+&& cd /CoiniumServ/bin/Release/ \
+&& sh ./build.sh
 
 
 EXPOSE 8081
