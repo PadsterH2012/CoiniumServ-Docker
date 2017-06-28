@@ -10,10 +10,9 @@ RUN yum -y update \
 && yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ \   
 && yum check-update \
 RUN yum -y install mono-complete git yum-utils
-RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
-&& cd /CoiniumServ \
-&& git submodule init \
-&& git submodule update 
+RUN git clone https://github.com/CoiniumServ/CoiniumServ.git 
+RUN cd /CoiniumServ 
+RUN git submodule init && git submodule update
 RUN sh /CoiniumServ/bin/Release/build.sh
 
 
