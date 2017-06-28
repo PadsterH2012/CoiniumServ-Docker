@@ -22,3 +22,4 @@ RUN sh ./build.sh
 
 EXPOSE 8081
 
+CMD mono /CoiniumServ/bin/Release/CoiniumServ.exe
