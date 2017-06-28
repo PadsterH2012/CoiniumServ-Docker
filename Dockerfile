@@ -17,7 +17,7 @@ RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
 && cd /CoiniumServ \
 && git submodule init \
 && git submodule update \
-RUN cd /CoiniumServ/bin/Release \
+&& cd /CoiniumServ/bin/Release \
 && sh ./build.sh
 
 
