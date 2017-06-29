@@ -12,13 +12,16 @@ RUN yum -y update; yum clean all \
 RUN yum -y install mono-complete; yum clean all
 RUN yum -y install git; yum clean all
 
-RUN git clone https://github.com/CoiniumServ/CoiniumServ.git 
-RUN cd /CoiniumServ; git submodule init; git submodule update
-RUN ls
-RUN pwd
-RUN cd CoiniumServ/build/release 
-RUN ls
-RUN pwd
+RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
+&& cd /CoiniumServ; git submodule init; git submodule update \
+&& ls \
+&& pwd \
+&& cd CoiniumServ/build/release \
+&& ls \
+&& pwd \
+&& sh ./build.sh
+
+
 EXPOSE 8081
 
 #CMD ["mono", "/CoiniumServ/bin/Release/CoiniumServ.exe"]
