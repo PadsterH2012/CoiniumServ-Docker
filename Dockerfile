@@ -13,14 +13,14 @@ RUN yum -y update; yum clean all \
 
 RUN yum -y install git; yum clean all \
 
-&& git clone https://github.com/CoiniumServ/CoiniumServ.git \
-&& cd ./CoiniumServ; git submodule init; git submodule update \
+&& git clone https://github.com/CoiniumServ/CoiniumServ.git /usr/local/bin/CoiniumServ \
+&& cd /usr/local/bin/CoiniumServ; git submodule init; git submodule update \
 && ls \
 && pwd \
-&& cd ./CoiniumServ/build/release \
+&& cd /usr/local/bin/CoiniumServ/build/release \
 && ls \
 && pwd \
-&& sh ./build.sh
+&& sh /usr/local/bin/CoiniumServ/build/release/build.sh
 
 
 EXPOSE 8081
