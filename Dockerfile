@@ -19,7 +19,8 @@ RUN yum -y install git; yum clean all \
 && cd /usr/local/bin/CoiniumServ/build/release \
 
 && sh /usr/local/bin/CoiniumServ/build/release/build.sh
-
+RUN mkdir /config
+RUN mkdir /rootcoinslocation
 
 EXPOSE 8081
 
