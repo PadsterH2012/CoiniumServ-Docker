@@ -25,4 +25,4 @@ RUN yum -y install git; yum clean all \
 
 EXPOSE 8081
 
-#CMD ["mono", "/CoiniumServ/bin/Release/CoiniumServ.exe"]
+CMD ["mono", "/usr/local/bin/CoiniumServ/build/release/CoiniumServ.exe"]
