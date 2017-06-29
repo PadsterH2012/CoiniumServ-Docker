@@ -9,10 +9,11 @@ RUN yum -y update; yum clean all \
 && rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
 && yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ \   
 && yum check-update \
-RUN yum -y install mono-complete; yum clean all
-RUN yum -y install git; yum clean all
+&& yum -y install mono-complete \
 
-RUN git clone https://github.com/CoiniumServ/CoiniumServ.git \
+RUN yum -y install git; yum clean all \
+
+&& git clone https://github.com/CoiniumServ/CoiniumServ.git \
 && cd ./CoiniumServ; git submodule init; git submodule update \
 && ls \
 && pwd \
