@@ -1,5 +1,3 @@
-# CoiniumServ-Docker
+# Dockerized CoiniumServ
 
-To add
-  Coins > Ext Location
-  Config > Ext Location
+linked with redis & mysql
