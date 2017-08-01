@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  mysql:
+    image: 'bitnami/mysql:latest'
+    ports:
+      - '3306:3306'
+    volumes:
+      - /mnt/ShareOne/Docker/Projects/1:/bitnami
+      - /mnt/ShareOne/Docker/Projects/1/db:/usr/local/mysql
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=my_user
+      - MYSQL_PASSWORD=my_password
+      - MYSQL_DATABASE=dbname
+    
+  redis:
+    image: 'sameersbn/redis:latest'
+    ports:
+      - '6379:6379'
+    volumes:
+      - /mnt/ShareOne/Docker/Projects/1:/var/lib/redis
+    depends_on:
+      - mysql
+      
+  mpool:
+    build: ./mpool
+    depends_on:
+      - redis
+      - mysql
+    ports:
+      - 8081:80
+    links:
+      - "mysql:dbname"
+      - "redis"
